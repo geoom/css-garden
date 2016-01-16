@@ -1,6 +1,12 @@
+@charset 'UTF-8';
 
-html {
-	color: yellow;
-	font-size: 20px
+// Variables;
+@import 'components/variables';
 
-}
+// components
+@import 'components/base';
+@import 'components/typo';
+@import 'components/grid';
+@import 'components/utilities';
+
+// Custom styles

@@ -3,6 +3,7 @@
 var gulp  =   require('gulp'),
 
   sass  =   require('gulp-sass'),
+  sassLint = require('gulp-sass-lint'),
   minifyCSS = require('gulp-minify-css'),
   autoprefixer = require('gulp-autoprefixer'),
 
@@ -13,6 +14,7 @@ var gulp  =   require('gulp'),
     port = process.env.port || 3031;
 
 require('es6-promise').polyfill(); // polyfill the Promise API to support node 0.10
+
 
 // launch index into default browser 
 gulp.task('open', function(){
@@ -34,6 +36,7 @@ gulp.task('connect', function(){
 });
 
 
+// sass compiler to css
 gulp.task('sass', function () {
   gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -41,7 +44,15 @@ gulp.task('sass', function () {
 });
 
 
-// live reload css
+// Lint for scss files 
+gulp.task('sass-lint', function () {
+  gulp.src('./assets/scss/*.scss')
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+});
+
+// css processing and live reload
 gulp.task('css', function(){
   gulp.src('./assets/css/*.css')
     .pipe(minifyCSS())
@@ -62,15 +73,16 @@ gulp.task('html', function(){
 
 // watch files for live reload
 gulp.task('watch', function(){
-  gulp.watch('./assets/scss/**/*.scss', ['sass']);
-    // gulp.watch('./assets/css/*.css', ['css']);
+    gulp.watch('./assets/scss/**/*.scss', ['sass']);
     gulp.watch('./index.html', ['html']);
 });
 
 
 // Gulp named tasks
 gulp.task('default', ['open']);
+
 gulp.task('build', ['sass', 'css']);
+gulp.task('lint', ['sass-lint']);
 gulp.task('serve', ['connect', 'open', 'watch']);
 
 
