@@ -1,0 +1,19 @@
+{
+  "name": "css-garden",
+  "version": "1.0.0",
+  "description": "\"A website to demonstrate of what can be accomplished through CSS-based design\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geoom/css-garden.git"
+  },
+  "author": "geoom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geoom/css-garden/issues"
+  },
+  "homepage": "https://github.com/geoom/css-garden"
+}
