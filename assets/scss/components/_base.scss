@@ -11,3 +11,16 @@
 }
 
 /* General styles and layout */
+
+body {
+	border-top: 3px solid #CFE423;
+	background: $bg-color;
+	
+	color: $color;
+	font-family: $font-family;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+}

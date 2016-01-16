@@ -40,7 +40,8 @@ gulp.task('connect', function(){
 gulp.task('sass', function () {
   gulp.src('./assets/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./assets/css'));
+    .pipe(gulp.dest('./assets/css'))
+    .pipe(connect.reload());
 });
 
 

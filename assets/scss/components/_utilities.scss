@@ -1,1 +1,31 @@
 @charset "UTF-8";
+
+/* Double Diagonal line */
+
+.diagonalizable {
+	padding-top: 2em;
+	background: #2072a7;
+	z-index: 1;
+
+	&::before, &::after {
+		background: inherit;
+		top: 0;
+		left: -25%;
+		z-index: -1;
+		width: 150%;
+		height: 75%;
+		
+		-webkit-transform: rotate(-2deg);
+		transform: rotate(-2deg);
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+	}
+	&::before {
+		background: #116094;height: 50%;
+		
+		-webkit-transform: rotate(-3deg);
+		transform: rotate(-3deg);
+		-webkit-transform-origin: 3% 0;
+		transform-origin: 3% 0;
+	}
+}
