@@ -1,4 +1,4 @@
 
-# css-garden
+# CSS garden
 
-A new style for css garden
+A demonstration of what can be accomplished through CSS-based design
