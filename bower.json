@@ -1,0 +1,16 @@
+{
+  "name": "css-garden",
+  "description": "\"A website to demonstrate of what can be accomplished through CSS-based design\"",
+  "main": "index.js",
+  "authors": [
+    "geoom"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/geoom/css-garden",
+  "moduleType": [
+    "es6"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
