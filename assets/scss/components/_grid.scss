@@ -7,6 +7,7 @@
 .section {
 	position: relative;
 	padding: 10px 10%;
+	padding-bottom: 8em;
 	
 	text-align: center;
 
@@ -25,7 +26,7 @@
 	/* Common style for pseudo-elements */
 	&::before, &::after {
 		position: absolute;
-		
+
 		content: '';
 		pointer-events: none;
 	}

@@ -10,36 +10,40 @@
 /* General styles and layout */
 body {
   border-top: 3px solid #CFE423;
-  background: #2980b9;
+  background: #fff;
   color: #fff;
   font-family: "Lato", Arial, sans-serif; }
 
 a {
   text-decoration: none;
-  color: #fff; }
+  color: #2fa0ec; }
+
+h3 + p {
+  margin-top: 0; }
 
 .page-wrapper {
   overflow: hidden; }
 
-.section, .preamble {
+.section, .preamble, .explanation {
   position: relative;
   padding: 10px 10%;
+  padding-bottom: 8em;
   text-align: center;
   /* Common style for pseudo-elements */ }
-  .section h2, .preamble h2 {
+  .section h2, .preamble h2, .explanation h2 {
     margin: 0;
     padding: 0;
     font-size: 2.8em;
     font-weight: 400; }
-  .section p, .preamble p {
+  .section p, .preamble p, .explanation p {
     font-size: 1.3em;
     line-height: 1.5; }
-  .section::before, .preamble::before, .section::after, .preamble::after {
+  .section::before, .preamble::before, .explanation::before, .section::after, .preamble::after, .explanation::after {
     position: absolute;
     content: '';
     pointer-events: none; }
   @media screen and (max-width: 1201px) {
-    .section, .preamble {
+    .section, .preamble, .explanation {
       font-size: 80%; } }
 
 /* Double Diagonal line */
@@ -65,6 +69,29 @@ a {
     transform: rotate(-3deg);
     -webkit-transform-origin: 3% 0;
     transform-origin: 3% 0; }
+
+/* Zig Zag (3d up and simple down) */
+.zigzagable::before, .explanation::before,
+.zigzagable::after,
+.explanation::after {
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  height: 90px;
+  background-size: 50px 100%; }
+
+.zigzagable::before, .explanation::before {
+  top: -90px;
+  background-image: -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, transparent), color-stop(0.25, #e56038));
+  background-image: linear-gradient(315deg, #e56038 25%, transparent 25%), linear-gradient(45deg, #e56038 25%, transparent 25%);
+  background-position: 50%; }
+
+.zigzagable::after, .explanation::after {
+  top: 100%;
+  background-image: -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, #e56038), color-stop(0.25, #e56038));
+  background-image: linear-gradient(135deg, #e56038 25%, transparent 25%), linear-gradient(225deg, #e56038 25%, transparent 25%);
+  background-position: 50%; }
 
 header {
   margin: 0 auto;
@@ -106,3 +133,75 @@ header {
   .preamble p {
     color: #4A463B;
     font-weight: 100; }
+
+.explanation {
+  background-color: #e56038;
+  padding-bottom: 5em; }
+  .explanation h3 {
+    font-weight: lighter;
+    font-size: 42px;
+    text-transform: uppercase;
+    text-decoration: underline; }
+  .explanation p {
+    font-weight: 100; }
+
+.participation {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-left: 80px;
+  width: 100%;
+  float: left;
+  color: #000; }
+  .participation h3, .participation p {
+    clear: left;
+    float: left;
+    max-width: 495px;
+    position: relative; }
+  .participation h3 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.25em;
+    margin: 0.5em 0; }
+  .participation::after {
+    background: url("../img/button-styles.png") no-repeat;
+    clear: right;
+    content: '';
+    display: block;
+    float: left;
+    height: 505px;
+    left: 50%;
+    margin-left: 0px;
+    margin-top: -490px;
+    position: relative;
+    width: 100%; }
+
+.benefits {
+  background-color: #232027;
+  color: #fff;
+  margin-bottom: 25px;
+  width: 100%;
+  float: left;
+  overflow: hidden; }
+  .benefits h3, .benefits p {
+    clear: left;
+    float: left;
+    left: 50%;
+    margin-left: 1.5%;
+    max-width: 495px;
+    position: relative;
+    width: 50%; }
+  .benefits h3 {
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 500; }
+  .benefits::after {
+    background: url("../img/prism-effect-slider.jpg") no-repeat;
+    content: '';
+    display: block;
+    float: left;
+    height: 505px;
+    left: 50%;
+    margin: -90px 0 0 -1250px;
+    min-width: 312px;
+    position: relative;
+    width: 100%; }
