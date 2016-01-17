@@ -3,3 +3,101 @@
 h3 + p {
     margin-top: 0;
 }
+
+// Text scale
+
+.link-braces a {
+	padding: 0 0.25em;
+	font-weight: 500;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.link-braces a:hover {
+	color: #D6DC28;
+	text-decoration: none;
+}
+
+.link-braces a::before,
+.link-braces a::after {
+	position: absolute;
+	top: 0;
+	font-weight: 100;
+	font-size: 150%;
+	line-height: 1;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+	transition: opacity 0.2s, transform 0.2s;
+}
+
+.link-braces a::before {
+	left: -0.1em;
+	content: '[';
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.link-braces a::after {
+	right: -0.1em;
+	content: ']';
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.link-braces a:hover::before,
+.link-braces a:hover::after {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+
+// Brackets effect for links
+
+.link-bracket-effect a::before,
+.link-bracket-effect a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.link-bracket-effect a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.link-bracket-effect a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.link-bracket-effect a:hover::before,
+.link-bracket-effect a:hover::after,
+.link-bracket-effect a:focus::before,
+.link-bracket-effect a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.clearflix {
+	&::before, &:after {
+		content: " ";
+		display: table;
+	}
+	 
+	&:after {
+		clear: both;
+	}
+}
+
+

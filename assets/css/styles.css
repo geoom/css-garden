@@ -1,4 +1,3 @@
-/*** Global ***/
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 *,
 *:after,
@@ -20,6 +19,83 @@ a {
 
 h3 + p {
   margin-top: 0; }
+
+.link-braces a, .summary a {
+  padding: 0 0.25em;
+  font-weight: 500;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s; }
+
+.link-braces a:hover, .summary a:hover {
+  color: #D6DC28;
+  text-decoration: none; }
+
+.link-braces a::before, .summary a::before,
+.link-braces a::after, .summary a::after {
+  position: absolute;
+  top: 0;
+  font-weight: 100;
+  font-size: 150%;
+  line-height: 1;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s; }
+
+.link-braces a::before, .summary a::before {
+  left: -0.1em;
+  content: '[';
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%); }
+
+.link-braces a::after, .summary a::after {
+  right: -0.1em;
+  content: ']';
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+.link-braces a:hover::before, .summary a:hover::before,
+.link-braces a:hover::after, .summary a:hover::after {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+.link-bracket-effect a::before, footer a::before,
+.link-bracket-effect a::after, footer a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s; }
+
+.link-bracket-effect a::before, footer a::before {
+  margin-right: 10px;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px); }
+
+.link-bracket-effect a::after, footer a::after {
+  margin-left: 10px;
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px); }
+
+.link-bracket-effect a:hover::before, footer a:hover::before,
+.link-bracket-effect a:hover::after, footer a:hover::after,
+.link-bracket-effect a:focus::before, footer a:focus::before,
+.link-bracket-effect a:focus::after, footer a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px); }
+
+.clearflix::before, .clearflix:after {
+  content: " ";
+  display: table; }
+
+.clearflix:after {
+  clear: both; }
 
 .page-wrapper {
   overflow: hidden; }
@@ -46,7 +122,6 @@ h3 + p {
     .section, .preamble, .explanation, .participation, .benefits, .requirements {
       font-size: 80%; } }
 
-/* Double Diagonal line */
 .diagonalizable, .preamble {
   padding-top: 2em;
   background: #2072a7;
@@ -70,7 +145,6 @@ h3 + p {
     -webkit-transform-origin: 3% 0;
     transform-origin: 3% 0; }
 
-/* Zig Zag (3d up and simple down) */
 .zigzagable::before, .explanation::before, .zigzagable::after, .explanation::after {
   right: 0;
   left: 0;
@@ -91,7 +165,6 @@ h3 + p {
   background-image: linear-gradient(135deg, #e56038 25%, transparent 25%), linear-gradient(225deg, #e56038 25%, transparent 25%);
   background-position: 50%; }
 
-/* Inclined Zig Zag */
 .inclined-zigzag::before, .requirements::before, .inclined-zigzag::after, .requirements::after {
   left: 0;
   width: 100%;
@@ -105,20 +178,14 @@ h3 + p {
 
 .inclined-zigzag::after, .requirements::after {
   bottom: 0;
-  background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #2980b9), color-stop(0.5, #b43));
-  background-image: linear-gradient(15deg, #2980b9 50%, #b43 50%); }
-
-.clearflix::before, .clearflix:after {
-  content: " ";
-  display: table; }
-
-.clearflix:after {
-  clear: both; }
+  background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #435a6b), color-stop(0.5, #b43));
+  background-image: linear-gradient(15deg, #435a6b 50%, #b43 50%); }
 
 header {
   margin: 0 auto;
   padding: 5.5em 2em 7em;
   background: #3498db;
+  color: #fff;
   text-align: right;
   font-family: 'Lato', Arial, sans-serif;
   color: #fff; }
@@ -138,16 +205,27 @@ header {
   margin: 20px 20px 20px 10px;
   width: 40%;
   top: 0;
-  left: 0; }
+  left: 0;
+  background: inherit;
+  color: #ccc; }
   .summary p {
     font: italic 1.1em/2.2 georgia;
     text-align: center;
-    opacity: 0.5;
     padding: 0 0 0.6em 0.1em;
     line-height: 1.5; }
+  .summary a {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    color: #404d5b;
+    vertical-align: bottom;
+    text-decoration: none;
+    white-space: nowrap;
+    text-decoration: underline; }
 
 .preamble {
-  background-color: #ebe8de; }
+  background: #ebe8de;
+  color: #ccc; }
   .preamble h3 {
     color: #e56038;
     font-size: 55px;
@@ -157,7 +235,8 @@ header {
     font-weight: 100; }
 
 .explanation {
-  background-color: #e56038;
+  background: #e56038;
+  color: #ccc;
   padding-bottom: 5em; }
   .explanation h3 {
     font-weight: lighter;
@@ -169,7 +248,7 @@ header {
 
 .participation {
   padding-right: 50%;
-  background-color: #fff;
+  background: #fff;
   color: #000;
   padding-bottom: 5em; }
   .participation h3 {
@@ -189,7 +268,8 @@ header {
     left: 50%; }
 
 .benefits {
-  background-color: #3498db;
+  background: #3498db;
+  color: #ccc;
   padding-left: 50%; }
   .benefits h3 {
     color: #fff;
@@ -209,7 +289,8 @@ header {
     right: 50%; }
 
 .requirements {
-  background-color: #b43; }
+  background: #b43;
+  color: #ccc; }
   .requirements h3 {
     font-weight: lighter;
     font-size: 42px;
@@ -217,3 +298,24 @@ header {
     text-decoration: underline; }
   .requirements p {
     font-weight: 100; }
+
+footer {
+  margin: 0 auto;
+  padding: 3em;
+  background: #435a6b;
+  color: #ccc;
+  text-align: center; }
+  footer a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    font-size: 1.35em; }
+    footer a:hover, footer a:focus {
+      outline: none; }

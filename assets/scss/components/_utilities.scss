@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Double Diagonal line */
+// Double Diagonal line 
 
 .diagonalizable {
 	padding-top: 2em;
@@ -32,7 +32,7 @@
 }
 
 
-/* Zig Zag (3d up and simple down) */
+// Zig Zag (3d up and simple down) 
 
 .zigzagable{
 
@@ -65,7 +65,7 @@
 
 }
 
-/* Inclined Zig Zag */
+// Inclined Zig Zag 
 
 
 .inclined-zigzag{
@@ -78,28 +78,14 @@
 
 	&::before {
 		top: 0;
-		background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #b43), color-stop(0.5, #3498db));
-		background-image: linear-gradient(15deg, #b43 50%, #3498db 50%);
+		background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, $requirements-bg-color), color-stop(0.5, $benefits-bg-color));
+		background-image: linear-gradient(15deg, $requirements-bg-color 50%, $benefits-bg-color 50%);
 	}
 
 	&::after {
 		bottom: 0;
-		background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #2980b9), color-stop(0.5, #b43));
-		background-image: linear-gradient(15deg, #2980b9 50%, #b43 50%);
+		background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, $footer-bg-color), color-stop(0.5, $requirements-bg-color));
+		background-image: linear-gradient(15deg, $footer-bg-color 50%, $requirements-bg-color 50%);
 	}
 
 }
-
-
-.clearflix {
-	&::before, &:after {
-		content: " ";
-		display: table;
-	}
-	 
-	&:after {
-		clear: both;
-	}
-}
-
-
