@@ -50,7 +50,7 @@ gulp.task('sass-lint', function () {
   gulp.src('./assets/scss/*.scss')
     .pipe(sassLint())
     .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
+    .pipe(sassLint.failOnError());
 });
 
 // css processing and live reload

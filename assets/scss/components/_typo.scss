@@ -4,22 +4,40 @@ h3 + p {
     margin-top: 0;
 }
 
-// Text scale
+.section-inline-link {
+	position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.35em;
+    &:hover, &:focus {
+    	outline: none;
+    }
+}
 
-.link-braces a {
+
+// Link braces-style
+
+.link-braces--container a {
 	padding: 0 0.25em;
 	font-weight: 500;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
 
-.link-braces a:hover {
+.link-braces-container a:hover {
 	color: #D6DC28;
 	text-decoration: none;
 }
 
-.link-braces a::before,
-.link-braces a::after {
+.link-braces-container a::before,
+.link-braces-container a::after {
 	position: absolute;
 	top: 0;
 	font-weight: 100;
@@ -30,28 +48,57 @@ h3 + p {
 	transition: opacity 0.2s, transform 0.2s;
 }
 
-.link-braces a::before {
+.link-braces-container a::before {
 	left: -0.1em;
 	content: '[';
 	-webkit-transform: translateX(-100%);
 	transform: translateX(-100%);
 }
 
-.link-braces a::after {
+.link-braces-container a::after {
 	right: -0.1em;
 	content: ']';
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
 }
 
-.link-braces a:hover::before,
-.link-braces a:hover::after {
+.link-braces-container a:hover::before,
+.link-braces-container a:hover::after {
 	opacity: 1;
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 }
 
 
+// Link slideup-style
+
+.link-slideup-container a {
+	overflow: hidden;
+	font-weight: 500;
+}
+
+.link-slideup-container a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(52,73,94,0.2);
+	content: '';
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transform: translateY(95%);
+	transform: translateY(95%);
+}
+
+.link-slideup-container a:hover::before,
+.link-slideup-container a:focus::before {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+	
 // Brackets effect for links
 
 .link-bracket-effect a::before,
