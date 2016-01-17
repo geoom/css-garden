@@ -15,6 +15,11 @@ You need to install Node.js and then the development tools. Node.js comes with a
     ```
     npm install -g gulp
     ```
+* Install Bower as global npm module:
+
+    ```
+    npm install -g bower
+    ```
 
 * [A polyfill for ES6-style Promises](https://github.com/jakearchibald/es6-promise): this is because PostCSS 5.0 does not support node 0.10, but you can polyfill the Promise API yourself (you don't need to upgrade to node to 4.1.1)
 
@@ -26,34 +31,35 @@ You need to install Node.js and then the development tools. Node.js comes with a
 
 Either clone this repository or fork it on GitHub and clone your fork:
 
-	```
-	git clone https://github.com/geoom/css-garden.git
-	cd css-garden
-	```
+```
+git clone https://github.com/geoom/css-garden.git
+cd css-garden
+```
 
 ### Install local dependencies
 
-    ```
-    npm install
-    ```
+```
+npm install
+bower install
+```
 
 ## Building
 
 The app made up of a number of css files that need to be merged into a final distribution for running. We use the Gulp tool to do this.
 
-    ```
-    gulp build
-    ```
+```
+gulp build
+```
 
 ## Running
 
 ### Start the Server
 
-* Run the server
+Run the server
 
-    ```
-    gulp serve
-    ```
+```
+gulp serve
+```
 
 
 

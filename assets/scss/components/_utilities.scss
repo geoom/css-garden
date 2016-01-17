@@ -14,20 +14,16 @@
 		z-index: -1;
 		width: 150%;
 		height: 75%;
-		
-		-webkit-transform: rotate(-2deg);
-		transform: rotate(-2deg);
-		-webkit-transform-origin: 0 0;
-		transform-origin: 0 0;
+
+		@include prefix((transform: rotate(-2deg)), webkit ms);
+		@include prefix((transform-origin: 0 0), webkit ms);
 	}
 	&::before {
 		background: #116094;
 		height: 50%;
 		
-		-webkit-transform: rotate(-3deg);
-		transform: rotate(-3deg);
-		-webkit-transform-origin: 3% 0;
-		transform-origin: 3% 0;
+		@include prefix((transform: rotate(-3deg)), webkit ms);
+		@include prefix((transform-origin: 3% 0), webkit ms);
 	}
 }
 

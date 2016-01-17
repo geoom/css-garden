@@ -24,50 +24,44 @@ h3 + p {
 
 // Link braces-style
 
-.link-braces--container a {
+.link-braces-container a {
 	padding: 0 0.25em;
 	font-weight: 500;
-	-webkit-transition: color 0.2s;
-	transition: color 0.2s;
+
+	@include prefix((transition: color 0.2s));
+
+	&:hover{
+		color: #D6DC28;
+		text-decoration: none;
+	}
+	&::before, &::after {
+		position: absolute;
+		top: 0;
+		font-weight: 100;
+		font-size: 150%;
+		line-height: 1;
+		opacity: 0;
+		@include prefix((opacity 0.2s, -webkit-transform 0.2s));
+	}
+	&::before {
+		left: -0.1em;
+		content: '[';
+		@include prefix((transform: translateX(-100%)));
+	}
+
+	&::after {
+		right: -0.1em;
+		content: ']';
+		@include prefix((transform: translateX(100%)));
+	}
+
+	&:hover::before, &:hover::after {
+		opacity: 1;
+		@include prefix((transform: translateX(0)));
+	}
+
 }
 
-.link-braces-container a:hover {
-	color: #D6DC28;
-	text-decoration: none;
-}
-
-.link-braces-container a::before,
-.link-braces-container a::after {
-	position: absolute;
-	top: 0;
-	font-weight: 100;
-	font-size: 150%;
-	line-height: 1;
-	opacity: 0;
-	-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
-	transition: opacity 0.2s, transform 0.2s;
-}
-
-.link-braces-container a::before {
-	left: -0.1em;
-	content: '[';
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-}
-
-.link-braces-container a::after {
-	right: -0.1em;
-	content: ']';
-	-webkit-transform: translateX(100%);
-	transform: translateX(100%);
-}
-
-.link-braces-container a:hover::before,
-.link-braces-container a:hover::after {
-	opacity: 1;
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
-}
 
 
 // Link slideup-style
@@ -75,66 +69,53 @@ h3 + p {
 .link-slideup-container a {
 	overflow: hidden;
 	font-weight: 500;
-}
 
-.link-slideup-container a::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(52,73,94,0.2);
-	content: '';
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: transform 0.2s;
-	-webkit-transform: translateY(95%);
-	transform: translateY(95%);
-}
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(52,73,94,0.2);
+		content: '';
+		@include prefix((transition: transform 0.2s));
+		@include prefix((transform: translateY(95%)));
+	}
 
-.link-slideup-container a:hover::before,
-.link-slideup-container a:focus::before {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
+	&:hover::before, &:focus::before {
+		@include prefix((transform: translateY(0)));
+	}
 }
 
 	
 // Brackets effect for links
 
-.link-bracket-effect a::before,
-.link-bracket-effect a::after {
-	display: inline-block;
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	transition: transform 0.3s, opacity 0.2s;
+.link-bracket-effect a {
+	&::before, &::after {
+		display: inline-block;
+		opacity: 0;
+		@include prefix((transition: transform 0.3s));
+	}
+
+	&::before {
+		margin-right: 10px;
+		content: '[';
+		@include prefix((transform: translateX(20px)));
+	}
+
+	&::after {
+		margin-left: 10px;
+		content: ']';
+		@include prefix((transform: translateX(-20px)));
+	}
+
+	&:hover::before, &:hover::after, &:focus::before, &:focus::after {
+		opacity: 1;
+		@include prefix((transform: translateX(0px)));
+	}
 }
 
-.link-bracket-effect a::before {
-	margin-right: 10px;
-	content: '[';
-	-webkit-transform: translateX(20px);
-	-moz-transform: translateX(20px);
-	transform: translateX(20px);
-}
-
-.link-bracket-effect a::after {
-	margin-left: 10px;
-	content: ']';
-	-webkit-transform: translateX(-20px);
-	-moz-transform: translateX(-20px);
-	transform: translateX(-20px);
-}
-
-.link-bracket-effect a:hover::before,
-.link-bracket-effect a:hover::after,
-.link-bracket-effect a:focus::before,
-.link-bracket-effect a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateX(0px);
-	-moz-transform: translateX(0px);
-	transform: translateX(0px);
-}
 
 .clearflix {
 	&::before, &:after {

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/**
+ * Get size for a block
+ *
+ * @param {number} $width - define which block
+ * @param {number} $height - define height, default value is $width
+ *
+ * @example scss
+ *
+ *	.element {
+ *  	@include size(100%);
+ *	}
+ *
+ *	.other-element {
+ *  	@include size(100%, 1px);
+ *	}
+ */
+
+@mixin size($width, $height: $width) {
+      width: $width;
+      height: $height;
+}
+
+
+/**
+ * Add prefixer for any property
+ *
+ * @param {string} $map - A rule to transform
+ * @param {string} $vendors - prefixes of supported vendors	
+ *
+ * @example scss
+ *
+ *	.element {
+ *  	@include prefix((transform: translate(-50%, -50%)), webkit ms);
+ *	}
+ *
+ *	.other-element {
+ *  	@include prefix((
+ *    	column-count: 3,
+ *    	column-gap: 1em,
+ *    	column-rule: 1px solid silver,
+ *    	column-width: 20em
+ *  	)), webkit moz);
+ * 	}
+ */
+
+@mixin prefix($map, $vendors: webkit moz ms o) {
+  @each $prop, $value in $map {
+        @if $vendors {
+          @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $prop}: #{$value};
+          }
+        }
+        #{$prop}: #{$value};  // Dump regular property anyway
+  }
+}
