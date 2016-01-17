@@ -1,7 +1,11 @@
 
 # CSS garden
 
-A demonstration of what can be accomplished through CSS-based design
+A demonstration of what can be accomplished through CSS-based design. You can also to find the [online version here](http://geoom.github.io/css-garden/). 
+
+![Cover site](https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtl1/v/t35.0-12/s2048x2048/12605509_962296190484393_101394447322348561_o.jpg?oh=2d097fc269fab2975aa4edfc11d406ab&oe=569E3FD2&__gda__=1453222471_e2b44748a2a2b15f703d36c6126f054a)
+
+If you want to bring this project to production environment, make sure to use the minified version of stylesheets that is inside of css folder (use `styles.min.css` intead of `styles.css` for production environment).
 
 ## Installation
 
@@ -26,6 +30,7 @@ You need to install Node.js and then the development tools. Node.js comes with a
     ```
     npm install es6-promise
     ```
+*Note: If you have problems like `Error: EACCES` make sure to execute command above as superuser.*
 
 ### Get the Code
 
@@ -60,6 +65,23 @@ Run the server
 ```
 gulp serve
 ```
+
+## Browser Support
+
+We only regularly test against Chrome 47 and occasionally against Firefox and Safari. The application should run on most modern browsers (including IE +9).
+
+## Folders structure
+
+Within the top-level folder you have the following structure (I only highlight relevant resources):
+
+* `node_modules` contains build tasks for Gulp along with others, user-installed, Node packages
+* `assets` contains most important resources such css files, scss files, img.
+* `vendor` contains third-party libraries, most of cases are managed by bower
+* `bower.json` configuracion file for bower packages
+* `package.json` configuration file for node packages
+* `index.html` what you have to execute.
+
+
 
 
 
