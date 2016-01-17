@@ -1,15 +1,39 @@
 @charset "UTF-8";
 
-/*** Global ***/
+// Default
 
 $bg-color: #fff;
-$color: #fff;
+$color: #ccc;
 $font-family: 'Lato', Arial, sans-serif;
 
 $link-color: #2fa0ec;
 
+// site sections
+
+$header-bg-color: #3498db;
+$header-color: #fff;
+
+$summary-bg-color: $bg-color;
+$summary-color: $color;
+
+$preamble-bg-color: #ebe8de;
+$preamble-color: $color;
+
+$explanation-bg-color: #e56038;
+$explanation-color: $color;
+
+$participation-bg-color: $bg-color
+$participation-color: #000;
+
+$benefits-bg-color: #3498db;
+$benefits-color: $color;
+
+$requirements-bg-color: #b43;
+$requirements-color: $color;
+
 
 // Media Query Ranges
+
 $small-screen-up: 601px !default;
 $medium-screen-up: 993px !default;
 $large-screen-up: 1201px !default;

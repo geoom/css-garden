@@ -16,7 +16,8 @@ header {
 	margin: 0 auto;
 	padding: 5.5em 2em 7em;
 
-	background: #3498db;
+	background: $header-bg-color;
+	color: $header-color;
 	
 	text-align: right;
 	font-family: 'Lato', Arial, sans-serif;
@@ -46,6 +47,9 @@ header {
     top: 0;
     left: 0;
 
+    background: $summary-bg-color;
+	color: $summary-color;
+
     p {
 	    font: italic 1.1em/2.2 georgia;
 	    text-align: center;
@@ -59,7 +63,8 @@ header {
 	@extend .section;
 	@extend .diagonalizable;
 
-	background-color: #ebe8de;
+	background: $preamble-bg-color;
+	color: $preamble-color;
 
 	h3 {
 		color: #e56038;
@@ -76,7 +81,9 @@ header {
 	@extend .section;
 	@extend .zigzagable;
 
-	background-color: #e56038;
+	background: $explanation-bg-color;
+	color: $explanation-color;
+
 	padding-bottom: 5em;
 
 	h3 {
@@ -92,80 +99,85 @@ header {
 }
 
 .participation {
-	background-color: #fff;
-	
-	padding-top: 60px;
-	padding-left: 80px;
-	width: 100%;
-	float: left;
+	@extend .section;
 
-	color: #000;
+	padding-right: 50%;
 
-	h3, p {
-		clear: left;
-	    float: left;
-	    max-width: 495px;
-	    position: relative;
-	}
+	background: $participation-bg-color;
+	color: $participation-color;
+	padding-bottom: 5em;
 
 	h3 {
-		font-size: 40px;
-	    font-weight: 500;
-	    line-height: 1.25em;
-	    margin: 0.5em 0;
+		font-weight: lighter;
+	    font-size: 42px;
+	    text-transform: uppercase;
+	    text-decoration: underline;
 	}
 
-	&::after {
+	p {
+		font-weight: 100;
+	}
+
+	&::before {
+	    right: 0;
+		z-index: 10;
+		display: block;
 		background: url("../img/button-styles.png") no-repeat;
-	    clear: right;
 	    content: '';
-	    display: block;
-	    float: left;
-	    height: 505px;
+	    height: 100%;
 	    left: 50%;
-	    margin-left: 0px;
-	    margin-top: -490px;
-	    position: relative;
-	    width: 100%;
 	}
 }
 
 .benefits {
-	background-color: #232027;
-	color: #fff;
-    margin-bottom: 25px;
-    width: 100%;
-    float: left;
-    overflow: hidden;
+	@extend .section;
 
-    h3, p {
-    	clear: left;
-		float: left;
-		left: 50%;
-		margin-left: 1.5%;
-		max-width: 495px;
-		position: relative;
-		width: 50%;
-    }
+	background: $benefits-bg-color;
+	color: $benefits-color;
+	padding-left: 50%;
 
-    h3 {
-		margin-top: 50px;
-		font-size: 40px;
-	    font-weight: 500;
+	h3 {
+		color: #fff;
+		font-weight: lighter;
+	    font-size: 42px;
+	    text-transform: uppercase;
+	    text-decoration: underline;
 	}
 
-    &::after {
-    	  background: url("../img/prism-effect-slider.jpg") no-repeat;
-		  content: '';
-		  display: block;
-		  float: left;
-		  height: 505px;
-		  left: 50%;
-		  margin: -90px 0 0 -1250px;
-		  min-width: 312px;
-		  position: relative;
-		  width: 100%;
-    }
+	p {
+		font-weight: 100;
+	}
+
+	&::before {
+
+		left: 0;
+		z-index: 10;
+		display: block;
+		background: url("../img/prism-effect-slider.jpg") no-repeat;
+	    content: '';
+	    height: 100%;
+	    right: 50%;
+	}
+
 }
 
+.requirements {
+	@extend .section;
+	@extend .inclined-zigzag;
+
+	background: $requirements-bg-color;
+	color: $requirements-color;
+
+	h3 {
+		font-weight: lighter;
+	    font-size: 42px;
+	    text-transform: uppercase;
+	    text-decoration: underline;
+	}
+
+	p {
+		font-weight: 100;
+	}
+
+}
 
