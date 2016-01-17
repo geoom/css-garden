@@ -5,7 +5,7 @@
 .diagonalizable {
 	padding-top: 2em;
 	background: #2072a7;
-	z-index: 1;
+	z-index: 9999;
 
 	&::before, &::after {
 		background: inherit;
@@ -31,6 +31,7 @@
 // Zig Zag (3d up and simple down) 
 
 .zigzagable{
+	z-index: 9999;
 
 	&::before, &::after {
 		right: 0;
@@ -63,8 +64,9 @@
 
 // Inclined Zig Zag 
 
-
 .inclined-zigzag{
+	z-index: 9999;
+
 	&::before, &::after {
 		left: 0;
 		width: 100%;

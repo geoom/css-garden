@@ -8,13 +8,13 @@
  *
  * @example scss
  *
- *	.element {
- *  	@include size(100%);
- *	}
+ *  .element {
+ *    @include size(100%);
+ *  }
  *
- *	.other-element {
- *  	@include size(100%, 1px);
- *	}
+ *  .other-element {
+ *    @include size(100%, 1px);
+ *  }
  */
 
 @mixin size($width, $height: $width) {
@@ -27,22 +27,22 @@
  * Add prefixer for any property
  *
  * @param {string} $map - A rule to transform
- * @param {string} $vendors - prefixes of supported vendors	
+ * @param {string} $vendors - prefixes of supported vendors 
  *
  * @example scss
  *
- *	.element {
- *  	@include prefix((transform: translate(-50%, -50%)), webkit ms);
- *	}
+ *  .element {
+ *    @include prefix((transform: translate(-50%, -50%)), webkit ms);
+ *  }
  *
- *	.other-element {
- *  	@include prefix((
- *    	column-count: 3,
- *    	column-gap: 1em,
- *    	column-rule: 1px solid silver,
- *    	column-width: 20em
- *  	)), webkit moz);
- * 	}
+ *  .other-element {
+ *    @include prefix((
+ *      column-count: 3,
+ *      column-gap: 1em,
+ *      column-rule: 1px solid silver,
+ *      column-width: 20em
+ *    )), webkit moz);
+ *  }
  */
 
 @mixin prefix($map, $vendors: webkit moz ms o) {

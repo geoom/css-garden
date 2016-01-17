@@ -3,7 +3,7 @@
 
 // Default
 
-$bg-color: #fff;
+$bg-color: white;
 $color: #ccc;
 $font-family: 'Lato', Arial, sans-serif;
 
@@ -16,10 +16,10 @@ $header-bg-color: #3498db;
 $header-color: #fff;
 
 $summary-bg-color: $bg-color;
-$summary-color: $color;
+$summary-color: #00FA9A;
 
 $preamble-bg-color: #ebe8de;
-$preamble-color: $color;
+$preamble-color: black;
 
 $explanation-bg-color: #e56038;
 $explanation-color: $color;
@@ -27,13 +27,13 @@ $explanation-color: $color;
 $participation-bg-color: $bg-color;
 $participation-color: #000;
 
-$benefits-bg-color: #3498db;
-$benefits-color: #E0DDDD;
+$benefits-bg-color: #254061;
+$benefits-color: #DDE7F3;
 
-$requirements-bg-color: #b43;
-$requirements-color: $color;
+$requirements-bg-color: #FFFECC;
+$requirements-color: #D99694;
 
-$footer-bg-color: #435a6b;
+$footer-bg-color: #73818C;
 $footer-color: $color;
 
 
@@ -51,3 +51,6 @@ $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
 $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+
+

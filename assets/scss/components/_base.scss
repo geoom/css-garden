@@ -8,7 +8,23 @@
 	@include prefix((box-sizing: border-box));
 }
 
-/* General styles and layout */
+html{
+	line-height: 1.5;
+
+	@media only screen and (min-width: 0) {
+		font-size: 13px;
+	}
+
+	@media only screen and (min-width: $medium-screen) {
+		font-size: 14.5px;
+	}
+
+	@media only screen and (min-width: $large-screen) {
+		font-size: 15px;
+	}
+
+	font-weight: normal;
+}
 
 body {
 	border-top: 3px solid #CFE423;
@@ -21,4 +37,9 @@ body {
 a {
 	text-decoration: none;
 	color: $link-color;
+}
+
+
+abbr[title] {
+    border: none;
 }
