@@ -3,7 +3,7 @@
 
 A demonstration of what can be accomplished through CSS-based design. You can also to find the [online version here](http://geoom.github.io/css-garden/). 
 
-![Cover site](https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtl1/v/t35.0-12/s2048x2048/12605509_962296190484393_101394447322348561_o.jpg?oh=2d097fc269fab2975aa4edfc11d406ab&oe=569E3FD2&__gda__=1453222471_e2b44748a2a2b15f703d36c6126f054a)
+![Cover site](/assets/img/cover.png)
 
 If you want to bring this project to production environment, make sure to use the minified version of stylesheets that is inside of css folder (use `styles.min.css` intead of `styles.css` for production environment).
 
